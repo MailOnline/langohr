@@ -22,12 +22,11 @@
   :java-source-paths ["src/java"]
   :javac-options     ["-target" "1.6" "-source" "1.6"]
   :url "http://clojurerabbitmq.info"
-  :repositories {"sonatype" {:url "http://oss.sonatype.org/content/repositories/releases"
-                             :snapshots false
-                             :releases {:checksum :fail :update :always}}
-                 "sonatype-snapshots" {:url "http://oss.sonatype.org/content/repositories/snapshots"
-                                       :snapshots true
-                                       :releases {:checksum :fail :update :always}}}
+  :repositories {"snapshots" {:url "http://nexusint.andintweb.dmgt.net:8081/nexus/content/repositories/snapshots"
+                              :username "admin" :password "admin123" :sign-releases false}
+                 "releases" {:url "http://nexusint.andintweb.dmgt.net:8081/nexus/content/repositories/releases"
+                             :username "admin" :password "admin123" :sign-releases false}
+                 "thirdparty" {:url "http://nexusint.andintweb.dmgt.net:8081/nexus/content/repositories/thirdparty"}}
   :aliases {"all" ["with-profile" "dev:dev,1.6:dev,cljhttp076"]}
   :global-vars {*warn-on-reflection* true}
   ;;:jvm-opts ["-Xmx512m"]
